@@ -1,0 +1,13 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+mat-toolbar {
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1) ;
+
+  }
+.base-container {
+    height: calc(100vh - 64px);
+}
