@@ -1,3 +1,3 @@
 export const environment = {
-    kyosai_api_url: 'http://127.0.0.1:8000/api'
+    kyosai_api_url: '${KYOSAI_API_URL}'
 };
