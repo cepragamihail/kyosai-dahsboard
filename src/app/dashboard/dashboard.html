@@ -1,3 +1,11 @@
+@if (factoryReports$ | async; as factoryReports) {
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <p>{{factoryReports | json}}</p>
+    </mat-card-content>
+  </mat-card>
+}
+
 <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
