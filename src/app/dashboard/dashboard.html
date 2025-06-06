@@ -1,7 +1,8 @@
-@if (factoryReports$ | async; as factoryReports) {
+@if (factoryReports$ | async; as factoryReport) {
   <mat-card appearance="outlined">
     <mat-card-content>
-      <p>{{factoryReports | json}}</p>
+      <app-guage-chart [data]="factoryReport.oee"></app-guage-chart>
+      <p>{{factoryReport | json}}</p>
     </mat-card-content>
   </mat-card>
 }
@@ -21,7 +22,7 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
+
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
@@ -31,7 +32,7 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
+
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
@@ -41,7 +42,7 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
+
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
@@ -51,7 +52,7 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
+
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
@@ -61,7 +62,7 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
+
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
@@ -71,5 +72,4 @@
       <button matButton>Learn More</button>
     </mat-card-actions>
   </mat-card>
-  
-  
+
