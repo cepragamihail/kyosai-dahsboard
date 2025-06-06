@@ -7,7 +7,6 @@
 # development and testing
 /coverage
 /e2e
-/src/environments/*.ts # Exclude local environment files if you are using envsubst
 
 # editor and IDE files
 .vscode
