@@ -1,3 +1,4 @@
 export const environment = {
-    kyosai_api_url: '${KYOSAI_API_URL}'
+    api_path: '/api/v1/',
+    factory_reports: 'factory-reports'
 };

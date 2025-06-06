@@ -11,7 +11,7 @@ export class FactoryService {
   private http = inject(HttpClient);
   
   getFatoryReports(): Observable<any> {
-    const url = `${environment.kyosai_api_url}/api/v1/factory-reports`;
+    const url = `${environment.api_path}${environment.factory_reports}`;
     console.log(url);
     return this.http.get<any>(url);
   }
