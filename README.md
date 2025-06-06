@@ -62,3 +62,9 @@ For more information on using the Angular CLI, including detailed command refere
 ## Node cersion issue
 nvm is not compatible with the "NPM_CONFIG_PREFIX" environment variable: currently set to "~/.global_modules"
 Run `unset NPM_CONFIG_PREFIX` to unset it.
+
+## Build Docker image
+:$ docker build --progress=plain --no-cache --build-arg KYOSAI_API_URL=localhost:8080 -t kyosai_front .
+
+## Run Docker image
+:$ docker run --network=host -p 80:80 kyosai_front
