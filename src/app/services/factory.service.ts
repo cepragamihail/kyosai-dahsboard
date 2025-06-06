@@ -9,11 +9,11 @@ import { environment } from '../../environments/environment'
 export class FactoryService {
 
   private http = inject(HttpClient);
-  
-  getFatoryReports(): Observable<any> {
+
+  getFactoryReports(): Observable<any> {
     const url = `${environment.api_path}${environment.factory_reports}`;
     console.log(url);
     return this.http.get<any>(url);
   }
-  
+
 }

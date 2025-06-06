@@ -20,7 +20,7 @@ export class Dashboard {
 
   constructor() {
     effect(() => {
-      this.factoryReports$ = this.factoryService.getFatoryReports();
+      this.factoryReports$ = this.factoryService.getFactoryReports();
     });
     // this.factoryService.getFatoryReports().subscribe(data => {
     //   console.log(data);
