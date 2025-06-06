@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy the rest of the application code
 COPY . .
@@ -23,7 +23,7 @@ RUN apk add gettext
 RUN npm run build --configuration=production
 
 # Run envsubst to replace placeholders in environment.ts with actual environment variable values
-RUN envsubst < src/environments/environment.ts > src/environments/environment.tmp.ts && mv src/environments/environment.tmp.ts src/environments/environment.ts
+#RUN envsubst < src/environments/environment.ts > src/environments/environment.tmp.ts && mv src/environments/environment.tmp.ts src/environments/environment.ts
 
 # --- Stage 2: Serve the application ---
 # Use a lightweight web server image (e.g., Nginx or http-server)
@@ -32,10 +32,10 @@ FROM nginx:alpine
 # Copy the custom Nginx configuration => example 1
 #COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy Nginx Files => example 2
-#COPY --from=builder nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy the built application files from the builder stage
-COPY --from=builder /app/dist/your-app-name/browser /usr/share/nginx/html
+COPY --from=builder /app/dist/myapp/browser /usr/share/nginx/html
 
 # Expose the port Nginx is listening on
 EXPOSE 80
