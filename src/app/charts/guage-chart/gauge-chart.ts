@@ -1,7 +1,7 @@
 import { Component, ElementRef, input, viewChild } from '@angular/core';
-import { GaugeModel } from './guage.model';
+import { GaugeModel } from './gauge.model';
 import * as d3 from 'd3';
-import { GaugeLegendModel } from './guage-legend.model';
+import { GaugeLegendModel } from './gauge-legend.model';
 
 @Component({
   selector: 'app-guage-chart',
@@ -295,7 +295,7 @@ export class GuageChart {
       .attr("x", width / -1.8)
       .attr("y", y + height)
       .attr("text-anchor", "start")
-      .text(`${data.short_label}:${data.value}${data.units}`)
+      .text(`${data.shortLabel}:${data.value}${data.units}`)
       .attr("fill", this.options().textColor)
       .attr("font-family", "monospace")
       .attr("font-size", font_size)

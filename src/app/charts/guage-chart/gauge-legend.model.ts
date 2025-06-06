@@ -2,6 +2,6 @@ export interface GaugeLegendModel {
     value: number,
     sectors: number[],
     label: string,
-    short_label: string,
+    shortLabel: string,
     units: string,
 }

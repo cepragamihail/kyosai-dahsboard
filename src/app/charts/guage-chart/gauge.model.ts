@@ -1,4 +1,4 @@
-import { GaugeLegendModel } from "./guage-legend.model";
+import { GaugeLegendModel } from "./gauge-legend.model";
 
 export interface GaugeModel {
     id?: number,

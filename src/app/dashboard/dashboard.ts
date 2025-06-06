@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FactoryService } from '../services/factory.service';
 import { Observable } from 'rxjs';
-import { GuageChart } from '../charts/guage-chart/guage-chart';
-import { GaugeModel } from '../charts/guage-chart/guage.model';
+import { GuageChart } from '../charts/guage-chart/gauge-chart';
+import { GaugeModel } from '../charts/guage-chart/gauge.model';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, MatCardModule, MatButtonModule, GuageChart],
@@ -45,21 +45,21 @@ get oee(): GaugeModel {
         "value": 14,
         "sectors": [30, 55, 65, 100],
         "label": "Availability",
-        "short_label": "A",
+        "shortLabel": "A",
         "units": "%"
       },
       {
         "value": 61,
         "sectors": [60, 75, 85, 100],
         "label": "Performance",
-        "short_label": "P",
+        "shortLabel": "P",
         "units": "%"
       },
       {
         "value": 90,
         "sectors": [85, 90, 95, 100],
         "label": "Quality",
-        "short_label": "Q",
+        "shortLabel": "Q",
         "units": "%"
       }
     ]
