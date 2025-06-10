@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { GaugeLegendModel } from './gauge-legend.model';
 
 @Component({
-  selector: 'app-guage-chart',
+  selector: 'app-gauge-chart',
   imports: [],
   template: `
     <div #gauge_chart></div>
@@ -17,7 +17,7 @@ import { GaugeLegendModel } from './gauge-legend.model';
     justify-content: center;
   }`
 })
-export class GuageChart {
+export class GaugeChart {
 
   options = input({
     width: 350,
@@ -47,14 +47,14 @@ export class GuageChart {
       labelOffset: 40
     }
   });
-   
+
   data = input.required<GaugeModel>();
   private chartInset = 10;
   private _chart: any;
-  
+
   // @ViewChild('gauge_chart') gaugeChartRef!: ElementRef;
   gaugeChartRef = viewChild.required<ElementRef>('gauge_chart');
-  
+
 
 
   // @Input() set data(gauge_data: GaugeModel) {
@@ -64,15 +64,15 @@ export class GuageChart {
   // @Input() set options(options: any) {
   //   this._options = Object.assign(this._options, options);
   // }
-  
+
   // get data(): GaugeModel {
   //   return this._data;
   // };
-  
+
   // get options(): any {
   //   return this._options;
   // }
-  
+
   private barWidth = this.options().width / 20;
   private radius = Math.min(this.options().width, this.options().height) / 2;
 
