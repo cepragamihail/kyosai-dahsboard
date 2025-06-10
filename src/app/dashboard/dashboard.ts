@@ -7,9 +7,10 @@ import { Observable } from 'rxjs';
 import { GaugeChart } from '../charts/guage-chart/gauge-chart';
 import { GaugeModel } from '../charts/guage-chart/gauge.model';
 import {DonutChart} from '../charts/donut-chart/donut-chart';
+import {BarChart} from '../charts/bar-chart/bar-chart';
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart],
+  imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart, BarChart],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
