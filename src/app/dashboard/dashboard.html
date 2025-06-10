@@ -1,7 +1,7 @@
 @if (factoryReports$ | async; as factoryReport) {
   <mat-card appearance="outlined">
     <mat-card-content>
-      <app-guage-chart [data]="factoryReport.oee"></app-guage-chart>
+      <app-gauge-chart [data]="factoryReport.oee"></app-gauge-chart>
       <p>{{factoryReport | json}}</p>
     </mat-card-content>
   </mat-card>
