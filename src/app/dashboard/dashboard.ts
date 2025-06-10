@@ -4,11 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FactoryService } from '../services/factory.service';
 import { Observable } from 'rxjs';
-import { GuageChart } from '../charts/guage-chart/gauge-chart';
+import { GaugeChart } from '../charts/guage-chart/gauge-chart';
 import { GaugeModel } from '../charts/guage-chart/gauge.model';
+import {DonutChart} from '../charts/donut-chart/donut-chart';
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, MatCardModule, MatButtonModule, GuageChart],
+  imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

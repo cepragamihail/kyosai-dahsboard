@@ -5,11 +5,17 @@
       <p>{{factoryReport | json}}</p>
     </mat-card-content>
   </mat-card>
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <app-donut-chart [data]="factoryReport.plannedTime"></app-donut-chart>
+    </mat-card-content>
+  </mat-card>
+<!--  app-donut-chart-->
 }
 
 <mat-card appearance="outlined">
     <mat-card-content>
-      <app-guage-chart [data]="oee"></app-guage-chart>
+      <app-gauge-chart [data]="oee"></app-gauge-chart>
     </mat-card-content>
   </mat-card>
 
