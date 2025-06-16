@@ -1,6 +1,6 @@
 export interface BarChartModel {
   name: string;
-  value: string;
+  value: number;
   valueAlias: string;
   color?: string;
   unit?: string;
