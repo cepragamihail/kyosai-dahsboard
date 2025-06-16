@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, ElementRef, HostListener, viewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, input, viewChild} from '@angular/core';
 import * as echarts from 'echarts';
+import {BarChartModel} from './bar-chart.model';
 
 @Component({
   selector: 'app-bar-chart',
@@ -11,47 +12,51 @@ export class BarChart implements AfterViewInit {
   private barLabelRotationChart: echarts.EChartsType | undefined;
   private barLabelRotationChartElement = viewChild<ElementRef>('bar_chart')
 
+  data = input.required<BarChartModel[]>()
+
 
   ngAfterViewInit(): void {
     this.barLabelRotationChart = echarts.init(this.barLabelRotationChartElement()?.nativeElement, 'dark', {
-      height: 500
+      height: 300
     });
     this.barLabelRotationChart.setOption(this.getOption());
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResized(): void {
     this.barLabelRotationChart?.resize();
   }
 
   getOption(): echarts.EChartsCoreOption {
     const chartHeight = this.barLabelRotationChart?.getHeight() || 500; // Use a default height if chart is not yet initialized
-    const dynamicFontSize = Math.max(10, Math.min(16, chartHeight / 30)); // Adjust the formula as needed
+    const dynamicFontSize = Math.max(12, Math.min(16, this.data.length / 30)); // Adjust the formula as needed
     console.log(dynamicFontSize);
-
+    console.log(chartHeight)
 
     return {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
+      dataset: {
+        // source: this.data(),
+        source: {
+          days: this.data().map(item => item.name),
+          value: this.data().map(item => item.value),
+          alias: this.data().map(item => item.valueAlias)
         }
       },
       xAxis: [
         {
           type: 'category',
           axisTick: { show: false },
-          data: ['2012', '2013', '2014', '2015', '2016']
+          data: this.data().map(item => item.name)
         }
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          data: this.data().map(item => item.value)
         }
       ],
       series: [
         {
-          name: 'Forest',
           type: 'bar',
           barGap: 0,
           label: {
@@ -61,16 +66,9 @@ export class BarChart implements AfterViewInit {
             align: 'left',
             verticalAlign: 'middle',
             rotate: 90,
-            formatter: '{c} {name|{a}}',
+            formatter: '{@alias} t',
             fontSize: dynamicFontSize,
-            rich: {
-              name: {}
-            }
           },
-          emphasis: {
-            focus: 'series'
-          },
-          data: [320, 332, 301, 334, 390]
         },
       ]
     }
