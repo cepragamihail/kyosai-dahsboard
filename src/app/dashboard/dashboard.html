@@ -1,8 +1,21 @@
+<div class="factory-report-container">
+  <app-gauge-chart [data]="oee"></app-gauge-chart>
+  <app-bar-chart [data]="production"></app-bar-chart>
+  <app-donut-chart [data]="plannedTime"></app-donut-chart>
+
+</div>
+
 @if (factoryReports$ | async; as factoryReport) {
   <mat-card appearance="outlined">
     <mat-card-content>
       <app-gauge-chart [data]="factoryReport.oee"></app-gauge-chart>
-      <p>{{factoryReport | json}}</p>
+<!--      <p>{{factoryReport | json}}</p>-->
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <app-bar-chart [data]="factoryReport.production"></app-bar-chart>
     </mat-card-content>
   </mat-card>
   <mat-card appearance="outlined">
@@ -21,7 +34,7 @@
 
 <mat-card appearance="outlined">
   <mat-card-content>
-    <app-bar-chart></app-bar-chart>
+    <app-bar-chart [data]="production"></app-bar-chart>
   </mat-card-content>
   </mat-card>
 

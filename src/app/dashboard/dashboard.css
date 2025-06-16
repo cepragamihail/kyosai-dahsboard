@@ -1,7 +1,19 @@
+/*:host {*/
+/*  display: grid;*/
+/*  gap: 16px;*/
+/*  padding: 16px;*/
+/*  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));*/
+/*}*/
+
 :host {
-  display: grid;
-  gap: 16px;
-  padding: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  flex-direction: column;
+}
+
+.factory-report-container {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 

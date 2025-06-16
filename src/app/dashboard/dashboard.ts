@@ -8,6 +8,8 @@ import { GaugeChart } from '../charts/guage-chart/gauge-chart';
 import { GaugeModel } from '../charts/guage-chart/gauge.model';
 import {DonutChart} from '../charts/donut-chart/donut-chart';
 import {BarChart} from '../charts/bar-chart/bar-chart';
+import {BarChartModel} from '../charts/bar-chart/bar-chart.model';
+import {DonutChartModel} from '../charts/donut-chart/donut-chart.model';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart, BarChart],
@@ -66,6 +68,32 @@ get oee(): GaugeModel {
       }
     ]
   };
+}
+
+get production(): BarChartModel[] {
+    return [
+      { "name": "14", "value": 2211, "valueAlias": "2.2K", "color": "#296900", "unit": "t" },
+      { "name": "11", "value": 83551, "valueAlias": "83.6K", "color": "#296900", "unit": "t" },
+      { "name": "10", "value": 134510, "valueAlias": "134.5K", "color": "#296900", "unit": "t" },
+      { "name": "09", "value": 92277, "valueAlias": "92.3K", "color": "#296900", "unit": "t" },
+      { "name": "08", "value": 51073, "valueAlias": "51.1K", "color": "#296900", "unit": "t" },
+      { "name": "07", "value": 11012, "valueAlias": "11.0K", "color": "#296900", "unit": "t" },
+      { "name": "04", "value": 13085, "valueAlias": "13.1K", "color": "#296900", "unit": "t" },
+      { "name": "03", "value": 49978, "valueAlias": "50.0K", "color": "#296900", "unit": "t" },
+      { "name": "02", "value": 204321, "valueAlias": "204.3K", "color": "#296900", "unit": "t" },
+      { "name": "01", "value": 66962, "valueAlias": "67.0K", "color": "#296900", "unit": "t" },
+      { "name": "17", "value": 196584, "valueAlias": "196.6K", "color": "#296900", "unit": "t" },
+      { "name": "16", "value": 54038, "valueAlias": "54.0K", "color": "#296900", "unit": "t" }
+    ];
+
+}
+
+get plannedTime(): DonutChartModel[] {
+    return [
+      {name: 'Production time', value: 45, color: "#006400"},   // green
+      {name: 'Stop loss', value: 30, color: "#8b0000"},         // red
+      {name: 'Unplanned time', value: 25, color: "#3498DB"}     // blue
+    ];
 }
 
 }
