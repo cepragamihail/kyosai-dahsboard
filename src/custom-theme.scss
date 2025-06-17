@@ -2,15 +2,17 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@import './app/themes/blue-gray.theme.css';
 
-html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+$brand_primary_color: #ff3700; 
+
+.brand-link, .brand-link:link, .brand-link:visited, .brand-link:hover, .brand-link:active, .brand-link:focus {
+  text-decoration: none;
+  color: $brand_primary_color;
+  font-size: 20px;
+}
+
+.a-decoration-none:link, .a-decoration-none:visited, .a-decoration-none:hover, .a-decoration-none:active {
+  text-decoration: none;
+  color: black;
 }
