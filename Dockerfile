@@ -1,6 +1,6 @@
 # --- Stage 1: Build the Angular application ---
 # Use a Node.js image as the base for building
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 # Set the working directory in the container
 WORKDIR /app
