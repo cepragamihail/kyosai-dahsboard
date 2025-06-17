@@ -8,12 +8,18 @@
 :host {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .factory-report-container {
-    display: grid;
-    gap: 16px;
-    padding: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  grid-template-columns: minmax(350px, auto) minmax(350px, 1fr) minmax(350px, auto);
 }
 
+mat-card {
+  background-color: var(--mat-sys-background);
+}
