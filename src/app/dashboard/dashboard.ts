@@ -10,9 +10,11 @@ import {DonutChart} from '../charts/donut-chart/donut-chart';
 import {BarChart} from '../charts/bar-chart/bar-chart';
 import {BarChartModel} from '../charts/bar-chart/bar-chart.model';
 import {DonutChartModel} from '../charts/donut-chart/donut-chart.model';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart, BarChart],
+  imports: [CommonModule, MatCardModule, MatButtonModule, GaugeChart, DonutChart, BarChart, MatToolbarModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
@@ -26,17 +28,8 @@ export class Dashboard {
     effect(() => {
       this.factoryReports$ = this.factoryService.getFactoryReports();
     });
-    // this.factoryService.getFatoryReports().subscribe(data => {
-    //   console.log(data);
-    // });
   }
 
-  // id?: number,
-  // title: string,
-  // shortTitle: string,
-  // value: number,
-  // sectors: number[],
-  // legend: GaugeLegendModel[],
 
 get oee(): GaugeModel {
    return {

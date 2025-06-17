@@ -1,15 +1,8 @@
-<div class="factory-report-container">
-  <app-gauge-chart [data]="oee"></app-gauge-chart>
-  <app-bar-chart [data]="production"></app-bar-chart>
-  <app-donut-chart [data]="plannedTime"></app-donut-chart>
-
-</div>
-
 @if (factoryReports$ | async; as factoryReport) {
+  <div class="factory-report-container">
   <mat-card appearance="outlined">
     <mat-card-content>
       <app-gauge-chart [data]="factoryReport.oee"></app-gauge-chart>
-<!--      <p>{{factoryReport | json}}</p>-->
     </mat-card-content>
   </mat-card>
 
@@ -23,21 +16,32 @@
       <app-donut-chart [data]="factoryReport.plannedTime"></app-donut-chart>
     </mat-card-content>
   </mat-card>
-<!--  app-donut-chart-->
+</div>
 }
+<div class="factory-report-container">
+  <mat-card appearance="outlined">
+      <mat-card-content>
+        <app-gauge-chart [data]="oee"></app-gauge-chart>
+      </mat-card-content>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <app-bar-chart [data]="production"></app-bar-chart>
+      </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined">
+        <mat-card-content>
+          <app-donut-chart [data]="plannedTime"></app-donut-chart>
+        </mat-card-content>
+        </mat-card>
+</div>
 
-<mat-card appearance="outlined">
-    <mat-card-content>
-      <app-gauge-chart [data]="oee"></app-gauge-chart>
-    </mat-card-content>
-  </mat-card>
+<div class="factory-report-container">
+  <app-gauge-chart [data]="oee"></app-gauge-chart>
+  <app-bar-chart [data]="production"></app-bar-chart>
+  <app-donut-chart [data]="plannedTime"></app-donut-chart>
 
-<mat-card appearance="outlined">
-  <mat-card-content>
-    <app-bar-chart [data]="production"></app-bar-chart>
-  </mat-card-content>
-  </mat-card>
-
+</div>
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>Poodle</mat-card-title>
